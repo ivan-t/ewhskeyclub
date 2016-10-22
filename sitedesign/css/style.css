@@ -35,6 +35,9 @@
     width:100%;
     position:relative !important;
 }
+.navbar-nav{
+    margin:0 !important;
+}
 
 @media(min-width: 768px){
     #nav{
