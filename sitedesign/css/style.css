@@ -8,6 +8,13 @@
             color:#c6a738;
             margin:25px 0 3px;;
         }
+            #header h1 a{
+                text-decoration:none;
+                color:#c6a738;
+            }
+            #header h1 a:hover{
+                color:#b29632;
+            }
         #header h2{
             font-size:14px;
             color:#b2b2b2;
@@ -21,15 +28,18 @@
     text-align:center;
     margin:0;
 }
-#nav ul li a{
-    color:#4c7ca2;
-}
-#nav ul li a:hover{
-    color:#00447b;
-}
-.active{
-    background-color:orange;
-}
+    #nav li a{
+        color:#4c7ca2;
+    }
+    #nav li a:hover{
+        color:#00447b;
+    }
+    #nav li > a:hover{
+        background-color: orange;
+    }
+    #nav li.active a{
+        background-color: orange !important;
+    }
 .affix{
     top:0;
     width:100%;
