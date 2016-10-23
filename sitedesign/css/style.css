@@ -40,6 +40,14 @@
     #nav li.active a{
         background-color: orange !important;
     }
+#left-content{
+    float:left;
+    width:70%;
+}
+#right-content{
+    float:right;
+    width:30%;
+}
 .affix{
     top:0;
     width:100%;
@@ -49,7 +57,18 @@
     margin:0 !important;
 }
 
-@media(min-width: 768px){
+@media(max-width:1000px){
+    #left-content{
+        float:none;
+        width:100%;
+    }
+    #right-content{
+        float:none;
+        width:100%;
+    }
+}
+
+@media(min-width:768px){
     #nav{
         height:50px;
     }
