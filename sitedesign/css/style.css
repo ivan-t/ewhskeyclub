@@ -1,71 +1,63 @@
 #header{
     text-transform:uppercase;
-    background-color:#00447b;
+    background-color:#0c4b33;
     text-align:center;
+    user-select:none;
 }
         #header h1{
             font-size:28px;
-            color:#c6a738;
-            margin:25px 0 3px;;
+            color:#FFF;
+            margin:50px 0 3px;;
         }
             #header h1 a{
                 text-decoration:none;
-                color:#c6a738;
-            }
-            #header h1 a:hover{
-                color:#b29632;
+                color:#FFF;
             }
         #header h2{
             font-size:14px;
-            color:#b2b2b2;
-            margin:0 0 25px;
+            color:#44B78B;
+            margin:0 0 50px;
         }
+
 #nav{
-    background-color:#e5ecf1;
+    background-color:#116b48;
     border-radius:0px;
     border:0px;
     text-transform:uppercase;
     text-align:center;
+    user-select:none;
     margin:0;
 }
     #nav li a{
-        color:#4c7ca2;
+        color:#FFF;
     }
-    #nav li a:hover{
-        color:#00447b;
+        #nav li > a:hover{
+            color:#C9F0DD;
+        }
+        #nav li.active > a{
+            color:#C9F0DD;
+        }
+    #nav li > a:hover, #nav li > a:focus{
+        background-color:transparent;
     }
-    #nav li > a:hover{
-        background-color: orange;
-    }
-    #nav li.active a{
-        background-color: orange !important;
-    }
-#left-content{
-    float:left;
-    width:70%;
+
+#container h1, #container h2, #container h3, #container h4, #container h5, #container h6, #container p{
+    color:#0C3C26;
 }
-#right-content{
-    float:right;
-    width:30%;
+#container a{
+    color:#116b48;
 }
+#container a:hover{
+    color:#20AA76;
+}
+
 .affix{
     top:0;
     width:100%;
-    position:relative !important;
+    position:relative;
 }
 .navbar-nav{
     margin:0 !important;
-}
-
-@media(max-width:1000px){
-    #left-content{
-        float:none;
-        width:100%;
-    }
-    #right-content{
-        float:none;
-        width:100%;
-    }
 }
 
 @media(min-width:768px){
@@ -78,6 +70,6 @@
             display:inline-block;
         }
     .affix{
-        position:fixed !important;
+        position:fixed;
     }
 }
