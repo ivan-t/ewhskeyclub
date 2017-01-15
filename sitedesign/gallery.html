@@ -10,6 +10,24 @@
     <link rel="icon" href="img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/instafeed.js"></script>
+    <script type="text/javascript">
+        var userFeed = new Instafeed({
+            get: 'user',
+            userId: '3944978506',
+            accessToken: '3944978506.cbe23c3.22ffe437b52a40b0a976e0fb24db3943',
+            sortBy: 'most-recent',
+            limit: '9',
+            resolution: 'standard_resolution',
+            template: '<div class="col-md-4"><a href="{{link}}"><img src="{{image}}"></a></div>',
+        });
+        userFeed.run();
+</script>
+<style>
+    #instafeed div{
+        padding:30px 15px;
+    }
+</style>
 </head>
 <body>
 <div id="header" class="container-fluid">
@@ -27,8 +45,7 @@
     </ul>
 </nav>
 <div id="container" class="container-fluid">
-    <div class="col-md-12">
-        Full width column
+    <div id="instafeed">
     </div>
 </div>
 
