@@ -32,6 +32,7 @@
     z-index:2;
 }
     #nav ul{
+        width:auto;
         float:none;
         margin:0;
         display:inline-block;
@@ -49,6 +50,7 @@
     padding:0 15%;
     overflow:hidden;
 }
+
 h1, h2, h3, h4, h5, h6, p{
     color:#0C3C26;
 }
@@ -76,6 +78,7 @@ img{
     width:100%;
     height:auto;
 }
+
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
     background-color:transparent;
 }
