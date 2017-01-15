@@ -30,6 +30,7 @@
     padding:0;
     height:30px;
     z-index:2;
+    min-height:50px;
 }
     #nav ul{
         width:auto;
@@ -85,11 +86,9 @@ img{
     background-color:transparent;
 }
 .affix {
+    position:fixed;
     top: 0;
     width: 100%;
-}
-.affix + .container-fluid {
-    padding-top: 50px;
 }
 
 @media(max-width: 768px){
