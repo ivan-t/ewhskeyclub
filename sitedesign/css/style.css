@@ -72,12 +72,6 @@ a{
 a:hover{
     color:#20AA76;
 }
-ul{
-    list-style-type:none;
-}
-    ul li{
-        text-decoration:none;
-    }
 img{
     width:100%;
     height:auto;
