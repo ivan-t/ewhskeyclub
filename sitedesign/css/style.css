@@ -77,6 +77,8 @@ a:hover{
 img{
     width:100%;
     height:auto;
+    display:block;
+    margin:0 auto;
 }
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
