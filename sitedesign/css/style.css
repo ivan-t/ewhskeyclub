@@ -45,18 +45,15 @@
         #nav li.active > a{
             color:#C9F0DD;
         }
-.navbar-default .navbar-nav>.active>a{
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
     background-color:transparent;
-}
-.navbar-default .navbar-collapse{
-    border-color:transparent;
 }
 .affix {
     top: 0;
     width: 100%;
 }
 .affix + .container-fluid {
-    padding-top: 70px;
+    padding-top: 50px;
 }
 #container h1, #container h2, #container h3, #container h4, #container h5, #container h6, #container p{
     color:#0C3C26;
@@ -70,5 +67,8 @@
 @media(max-width: 768px){
     #nav{
         height:auto;
+    }
+    .affix + .container-fluid {
+        padding-top: 230px;
     }
 }
