@@ -17,24 +17,35 @@
             userId: '3944978506',
             accessToken: '3944978506.cbe23c3.22ffe437b52a40b0a976e0fb24db3943',
             sortBy: 'most-recent',
-            limit: '9',
+            limit: '8',
             resolution: 'standard_resolution',
-            template: '<div class="col-md-4"><a href="{{link}}"><img src="{{image}}"></a></div>',
+            template: '<div class="image"><a href="{{link}}"><img src="{{image}}"></a></div>',
         });
         userFeed.run();
-</script>
-<style>
-    #instafeed div{
-        padding:30px 15px;
-    }
-</style>
+    </script>
+    <style>
+        #instafeed{
+            padding:30px 15px;
+        }
+        .image{
+            padding:30px 15px;
+            width:50%;
+            float:left;
+        }
+
+        @media(max-width: 992px){
+            .image{
+                width:100%;
+            }
+        }
+    </style>
 </head>
 <body>
 <div id="header" class="container-fluid">
     <h1><a href="#">Edmonds-Woodway Key Club</a></h1>
     <h2>Caring—our way of life</h2>
 </div>
-<nav id="nav" class="navbar navbar-default" data-spy="affix" data-offset-top="100">
+<nav id="nav" class="navbar navbar-default">
     <ul class="nav navbar-nav">
         <li><a href="index.html" class="navbar-link">Home</a></li>
         <li><a href="membership.html" class="navbar-link">Membership</a></li>

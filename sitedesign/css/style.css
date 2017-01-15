@@ -48,7 +48,7 @@
             color:#C9F0DD;
         }
 #container{
-    padding:0 15%;
+    padding:30px 15%;
     overflow:hidden;
 }
 
@@ -65,6 +65,9 @@ h1{
 h2{
     font-size:24px;
 }
+h3{
+    font-size:18px;
+}
 p{
     text-align:left;
     font-size:16px;
@@ -80,15 +83,12 @@ img{
     height:auto;
     display:block;
     margin:0 auto;
+    padding:10px;
+    border:10px #318464 solid;
 }
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
     background-color:transparent;
-}
-.affix {
-    position:fixed;
-    top: 0;
-    width: 100%;
 }
 
 @media(max-width: 768px){
@@ -98,8 +98,5 @@ img{
     }
     #nav{
         height:auto;
-    }
-    .affix + .container-fluid {
-        padding-top: 230px;
     }
 }
