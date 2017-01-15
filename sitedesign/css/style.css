@@ -49,32 +49,36 @@
     padding:0 15%;
     overflow:hidden;
 }
-#container h1, #container h2, #container h3, #container h4, #container h5, #container h6, #container p{
+h1, h2, h3, h4, h5, h6, p{
     color:#0C3C26;
 }
-#container h1, #container h2, #container h3, #container h4, #container h5, #container h6{
+h1, h2, h3, h4, h5, h6{
     text-align:center;
     text-transform:uppercase;
 }
-#container h1{
+h1{
     font-size:36px;
 }
-#container h2{
-    font-size:28px;
-}
-#container h3{
+h2{
     font-size:24px;
 }
-#container p{
+p{
+    text-align:left;
     font-size:16px;
 }
-#container a{
+a{
     color:#116b48;
 }
-#container a:hover{
+a:hover{
     color:#20AA76;
 }
-#container img{
+ul{
+    list-style-type:none;
+}
+    ul li{
+        text-decoration:none;
+    }
+img{
     width:100%;
     height:auto;
 }
