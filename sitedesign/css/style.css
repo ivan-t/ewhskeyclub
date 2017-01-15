@@ -5,7 +5,7 @@
     user-select:none;
 }
         #header h1{
-            font-size:36px;
+            font-size:28px;
             color:#FFF;
             margin:50px 0 3px;;
         }
@@ -39,45 +39,12 @@
     #nav li a{
         color:#FFF;
     }
-        #nav li.active > a{
-            color:#C9F0DD;
-        }
         #nav li > a:hover{
             color:#C9F0DD;
         }
-#container{
-    padding:0 15%;
-    overflow:hidden;
-}
-#container h1, #container h2, #container h3, #container h4, #container h5, #container h6, #container p{
-    color:#0C3C26;
-}
-#container h1, #container h2, #container h3, #container h4, #container h5, #container h6{
-    text-align:center;
-    text-transform:uppercase;
-}
-#container h1{
-    font-size:36px;
-}
-#container h2{
-    font-size:28px;
-}
-#container h3{
-    font-size:24px;
-}
-#container p{
-    font-size:16px;
-}
-#container a{
-    color:#116b48;
-}
-#container a:hover{
-    color:#20AA76;
-}
-#container img{
-    width:100%;
-    height:auto;
-}
+        #nav li.active > a{
+            color:#C9F0DD;
+        }
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
     background-color:transparent;
 }
@@ -88,12 +55,16 @@
 .affix + .container-fluid {
     padding-top: 50px;
 }
-
+#container h1, #container h2, #container h3, #container h4, #container h5, #container h6, #container p{
+    color:#0C3C26;
+}
+#container a{
+    color:#116b48;
+}
+#container a:hover{
+    color:#20AA76;
+}
 @media(max-width: 768px){
-    #container{
-        padding:0 10%;
-        overflow:hidden;
-    }
     #nav{
         height:auto;
     }
