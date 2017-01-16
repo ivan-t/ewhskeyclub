@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Ivan Tan, Jonathan Cho">
+    <title>TEMPLATE | GALLERY</title>
+    <link rel="icon" href="img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/instafeed.js"></script>
+    <script type="text/javascript">
+        var userFeed = new Instafeed({
+            get: 'user',
+            userId: '3944978506',
+            accessToken: '3944978506.cbe23c3.22ffe437b52a40b0a976e0fb24db3943',
+            sortBy: 'most-recent',
+            limit: '8',
+            resolution: 'standard_resolution',
+            template: '<div class="image"><a href="{{link}}"><img src="{{image}}"></a></div>',
+        });
+        userFeed.run();
+    </script>
+    <style>
+        #instafeed{
+            padding:30px 15px;
+        }
+        .image{
+            padding:30px 15px;
+            width:50%;
+            float:left;
+        }
+
+        @media(max-width: 992px){
+            .image{
+                width:100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="header" class="container-fluid">
+    <h1><a href="#">Edmonds-Woodway Key Club</a></h1>
+    <h2>Caring—our way of life</h2>
+</div>
+<nav id="nav" class="navbar navbar-default">
+    <ul class="nav navbar-nav">
+        <li><a href="index.html" class="navbar-link">Home</a></li>
+        <li><a href="membership.html" class="navbar-link">Membership</a></li>
+        <li><a href="events.html" class="navbar-link">Events</a></li>
+        <li><a href="calendar.html" class="navbar-link">Calendar</a></li>
+        <li class="active"><a href="gallery.html" class="navbar-link">Gallery</a></li>
+        <li><a href="contact.html" class="navbar-link">Contact</a></li>
+    </ul>
+</nav>
+<div id="container" class="container-fluid">
+    <div id="instafeed">
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
