@@ -48,12 +48,37 @@
                 color:#C9F0DD;
             }
 #container{
-    padding:0 5vw;
+    padding:0;
+    margin:0;
+    overflow:hidden;
+    line-height:1.5;
 }
-.row{
-    margin:5vw 0;
+#footer{
+    height:175px;
+    background-color:#333333;
 }
-
+    #footer h6{
+        color:#DDD;
+        line-height:175px;
+    }
+div.section:first-child{
+    border-top:none;
+    border-bottom:1px #DDD solid;
+}
+div.section:nth-child(odd){
+    background-color:#F8F8F8;
+    padding:3vw;
+    border-top:1px #DDD solid;
+    border-bottom:1px #DDD solid;
+}
+div.section:nth-child(even){
+    background-color:#FFF;
+    padding:3vw;
+}
+.wsection{
+    background-color:#FFF;
+    padding:3vw;
+}
 h1, h2, h3, h4, h5, h6, p{
     color:#0C3C26;
 }
