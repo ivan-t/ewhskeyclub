@@ -48,7 +48,10 @@
                 color:#C9F0DD;
             }
 #container{
-    padding:1vw 10vw;
+    padding:0 5vw;
+}
+.row{
+    margin:5vw 0;
 }
 
 h1, h2, h3, h4, h5, h6, p{
@@ -83,7 +86,7 @@ img{
   justify-content: center;
 }
 
-@media screen and (max-width:1115px){
+@media screen and (max-width:1140px){
     #header #logo, #header #nav{
         float:none;
         width:100%;
