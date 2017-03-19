@@ -41,7 +41,7 @@
         #header #nav li a{
             color:#FFF;
         }
-            #header #nav li.active{
+            #header #nav li a.active{
                 color:#C9F0DD;
             }
             #header #nav li a:hover{
