@@ -1,0 +1,218 @@
+// http://meyerweb.com/eric/tools/css/reset/
+//  v2.0 | 20110126
+//  License: none (public domain)
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+// HTML5 display-role reset for older browsers
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+// VARIABLES
+
+$font-family: "Myriad Pro", Arial, Helvetica, sans-serif;
+
+$black: #231f20;
+$white: #ffffff;
+$light-grey: #cccccc;
+$dark-grey: #333333;
+$blue: #003366;
+$gold: #b49759;
+$cyan: #00aeef;
+$light-blue: #75c5f8;
+
+// TYPOGRAPHY
+
+html, body{
+    font-family: $font-family;
+}
+h1{
+    font-size: 64px;
+    font-weight: normal;
+    color: $black;
+}
+h2{
+    font-size: 18px;
+    font-weight: bold;
+    color: $dark-grey;
+}
+p{
+    font-size: 16px;
+    font-weight: normal;
+    color: $dark-grey;
+}
+a{
+    font-size: 16px;
+    font-weight: normal;
+    color: $blue;
+    text-decoration: none;
+}
+a:hover{
+    color: $cyan;
+}
+
+// STYLES
+body, html{
+    height: 100%;
+}
+#header{
+    height: 100px;
+    padding: 15px 100px;
+    background-color: $blue;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0.95;
+    img{
+        height: 60px;
+        padding: 20px 0px;
+        width: auto;
+    }
+    #nav{
+        float: right;
+        line-height: 100px;
+        li{
+            display: inline;
+            margin: 0px 20px;
+            a{
+                font-size: 18px;
+                font-weight: bold;
+                color: $light-grey;
+                text-transform: uppercase;
+            }
+            a:hover{
+                color: $cyan;
+            }
+            a.active{
+                color: $cyan;
+            }
+        }
+    }
+}
+#cover{
+    background-image: url(../img/cover.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    #cover-text{
+        height:100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        h2{
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 72px;
+            text-transform: uppercase;
+            text-align: center;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        h3{
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 32px;
+            text-transform: uppercase;
+            text-align: center;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            font-weight: bold;
+        }
+    }
+}
+#content{
+    .section{
+        margin: 0 auto;
+        padding: 0 10%;
+        .text-section{
+            padding: 50px 10%;
+            h1{
+                font-size: 48px;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+            p{
+                font-size: 18px;
+                line-height: 30px;
+                padding-top: 25px;
+                padding-bottom: 25px;
+            }
+            p:last-child{
+                padding-bottom: 0px;
+            }
+        }
+    }
+    .section.bg-blue{
+        background-color: $light-blue;
+        .text-section{
+            h1, p{
+                color: $white;
+            }
+        }
+        a.button{
+            color: $white;
+            border: 1px solid $white;
+            padding: 15px 30px;
+            margin: 0 auto;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        a.button:hover{
+            border: 1px solid $gold;
+            background-color: $gold;
+        }
+    }
+}
+#footer{
+    background-color: $black;
+    padding: 50px 0px;
+    img{
+        height: 100px;
+        width: auto;
+        display: block;
+        margin: 0 auto;
+    }
+}
+.ta-center{
+    text-align: center;
+}
