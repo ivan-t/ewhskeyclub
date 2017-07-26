@@ -59,6 +59,10 @@ $gold: #b49759;
 $cyan: #00aeef;
 $light-blue: #75c5f8;
 
+$cover-index: url(../img/cover-index.jpg);
+$cover-updates: url(../img/cover-updates.jpg);
+$cover-events: url(../img/cover-events.jpg);
+
 // TYPOGRAPHY
 
 html, body{
@@ -82,27 +86,36 @@ p{
 a{
     font-size: 16px;
     font-weight: normal;
-    color: $blue;
+    color: $cyan;
     text-decoration: none;
 }
 a:hover{
-    color: $cyan;
+    color: $light-blue;
 }
 
 // STYLES
 body, html{
     height: 100%;
 }
+::selection{
+    color: $white;
+    background-color: $light-blue; 
+}
+::-moz-selection{
+    color: $white;
+    background-color: $light-blue;
+}
 #header{
     height: 100px;
     padding: 15px 100px;
-    background-color: $blue;
+    background-color: rgb(0, 51, 102);
+    background-color: rgba(0, 51, 102, 0.95);
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    opacity: 0.95;
+    user-select: none;
     img{
         height: 60px;
         padding: 20px 0px;
@@ -117,28 +130,39 @@ body, html{
             a{
                 font-size: 18px;
                 font-weight: bold;
-                color: $light-grey;
+                color: $white;
                 text-transform: uppercase;
             }
             a:hover{
-                color: $cyan;
+                color: $light-blue;
             }
             a.active{
-                color: $cyan;
+                color: $light-blue;
+                border-bottom: 4px solid $light-blue;
             }
         }
     }
 }
-#cover{
-    background-image: url(../img/cover.jpg);
+#cover-index{
+    background-image: $cover-index;
+}
+#cover-updates{
+    background-image: $cover-updates;
+}
+#cover-events{
+    background-image: $cover-events;
+}
+.cover{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
+    user-select: none;
     #cover-text{
         height:100%;
         background-color: rgba(0, 0, 0, 0.4);
         h2{
+            color: rgb(255, 255, 255);
             color: rgba(255, 255, 255, 0.8);
             font-size: 72px;
             text-transform: uppercase;
@@ -148,6 +172,7 @@ body, html{
             transform: translateY(-50%);
         }
         h3{
+            color: rgb(255, 255,255);
             color: rgba(255, 255, 255, 0.8);
             font-size: 32px;
             text-transform: uppercase;
@@ -170,6 +195,11 @@ body, html{
                 font-weight: bold;
                 text-transform: uppercase;
             }
+            h2{
+                font-size: 24px;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
             p{
                 font-size: 18px;
                 line-height: 30px;
@@ -180,22 +210,38 @@ body, html{
                 padding-bottom: 0px;
             }
         }
+        a.button{
+            color: $white;
+            background-color: $light-blue;
+            border: 1px solid $light-blue;
+            padding: 20px 30px 17px;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            user-select: none;
+        }
+        a.button:hover{
+            background-color: $blue;
+            border: 1px solid $blue;
+        }
     }
-    .section.bg-blue{
+    .section:nth-child(even){
         background-color: $light-blue;
         .text-section{
-            h1, p{
+            h1, h2, p{
                 color: $white;
             }
         }
         a.button{
             color: $white;
+            background-color: transparent;
             border: 1px solid $white;
-            padding: 15px 30px;
+            padding: 20px 30px 17px;
             margin: 0 auto;
             text-transform: uppercase;
             font-weight: bold;
             letter-spacing: 1px;
+            user-select: none;
         }
         a.button:hover{
             border: 1px solid $gold;
@@ -206,6 +252,7 @@ body, html{
 #footer{
     background-color: $black;
     padding: 50px 0px;
+    user-select: none;
     img{
         height: 100px;
         width: auto;

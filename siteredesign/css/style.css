@@ -61,25 +61,34 @@ p {
 a {
   font-size: 16px;
   font-weight: normal;
-  color: #003366;
+  color: #00aeef;
   text-decoration: none; }
 
 a:hover {
-  color: #00aeef; }
+  color: #75c5f8; }
 
 body, html {
   height: 100%; }
+
+::selection {
+  color: #ffffff;
+  background-color: #75c5f8; }
+
+::-moz-selection {
+  color: #ffffff;
+  background-color: #75c5f8; }
 
 #header {
   height: 100px;
   padding: 15px 100px;
   background-color: #003366;
+  background-color: rgba(0, 51, 102, 0.95);
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  opacity: 0.95; }
+  user-select: none; }
   #header img {
     height: 60px;
     padding: 20px 0px;
@@ -93,23 +102,34 @@ body, html {
       #header #nav li a {
         font-size: 18px;
         font-weight: bold;
-        color: #cccccc;
+        color: #ffffff;
         text-transform: uppercase; }
       #header #nav li a:hover {
-        color: #00aeef; }
+        color: #75c5f8; }
       #header #nav li a.active {
-        color: #00aeef; }
+        color: #75c5f8;
+        border-bottom: 4px solid #75c5f8; }
 
-#cover {
-  background-image: url(../img/cover.jpg);
+#cover-index {
+  background-image: url(../img/cover-index.jpg); }
+
+#cover-updates {
+  background-image: url(../img/cover-updates.jpg); }
+
+#cover-events {
+  background-image: url(../img/cover-events.jpg); }
+
+.cover {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100%; }
-  #cover #cover-text {
+  height: 100%;
+  user-select: none; }
+  .cover #cover-text {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4); }
-    #cover #cover-text h2 {
+    .cover #cover-text h2 {
+      color: white;
       color: rgba(255, 255, 255, 0.8);
       font-size: 72px;
       text-transform: uppercase;
@@ -117,7 +137,8 @@ body, html {
       position: relative;
       top: 50%;
       transform: translateY(-50%); }
-    #cover #cover-text h3 {
+    .cover #cover-text h3 {
+      color: white;
       color: rgba(255, 255, 255, 0.8);
       font-size: 32px;
       text-transform: uppercase;
@@ -136,6 +157,10 @@ body, html {
       font-size: 48px;
       font-weight: bold;
       text-transform: uppercase; }
+    #content .section .text-section h2 {
+      font-size: 24px;
+      font-weight: bold;
+      text-transform: uppercase; }
     #content .section .text-section p {
       font-size: 18px;
       line-height: 30px;
@@ -143,25 +168,40 @@ body, html {
       padding-bottom: 25px; }
     #content .section .text-section p:last-child {
       padding-bottom: 0px; }
-#content .section.bg-blue {
-  background-color: #75c5f8; }
-  #content .section.bg-blue .text-section h1, #content .section.bg-blue .text-section p {
-    color: #ffffff; }
-  #content .section.bg-blue a.button {
+  #content .section a.button {
     color: #ffffff;
+    background-color: #75c5f8;
+    border: 1px solid #75c5f8;
+    padding: 20px 30px 17px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    user-select: none; }
+  #content .section a.button:hover {
+    background-color: #003366;
+    border: 1px solid #003366; }
+#content .section:nth-child(even) {
+  background-color: #75c5f8; }
+  #content .section:nth-child(even) .text-section h1, #content .section:nth-child(even) .text-section h2, #content .section:nth-child(even) .text-section p {
+    color: #ffffff; }
+  #content .section:nth-child(even) a.button {
+    color: #ffffff;
+    background-color: transparent;
     border: 1px solid #ffffff;
-    padding: 15px 30px;
+    padding: 20px 30px 17px;
     margin: 0 auto;
     text-transform: uppercase;
     font-weight: bold;
-    letter-spacing: 1px; }
-  #content .section.bg-blue a.button:hover {
+    letter-spacing: 1px;
+    user-select: none; }
+  #content .section:nth-child(even) a.button:hover {
     border: 1px solid #b49759;
     background-color: #b49759; }
 
 #footer {
   background-color: #231f20;
-  padding: 50px 0px; }
+  padding: 50px 0px;
+  user-select: none; }
   #footer img {
     height: 100px;
     width: auto;
