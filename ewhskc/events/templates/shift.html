@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div id="header">
+        <a href="{% url 'index' %}"><img src="{% static 'img/logo.svg' %}"></a>
+        <ul id="nav">
+            <li><a href="{% url 'updates' %}">Updates</a></li>
+            <li><a href="{% url 'events' %}" class="active">Events</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'profile' %}">Profile</a></li>
+            <li><a href="{% url 'logout' %}" class="loginout">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'login' %}" class="loginout">Login</a></li>
+            {% endif %} 
+        </ul>
+    </div>
+    <div id="content" class="no-cover">
+        <div class="section">
+            <div class="text-section uppercase ta-center">
+                {% if user.is_authenticated %}
+                <div style="margin-bottom: 100px;">
+                    <h1>{{ shift.event|truncatechars:50 }}</h1>
+                    <h1>{{ shift.event.event_date }}</h1>
+                    <h1>{{ shift.event.start_time }} - {{ shift.event.end_time }}</h1>
+                    <h1>Shift Time: {{ shift.time }}</h1>
+                    {% if shift.user == null %}
+                    <h1>Registering Volunter: {{ userprofile.username }}</h1>
+                    {% else %}
+                    <h1>Registered Volunteer: {{ shift.user }}</h1>
+                    {% endif %}
+                </div>
+                {% if shift.event.is_past_due == False %}
+                {% if shift.user == null %}
+                <div>
+                    <h2>Do you want to sign up for this shift?</h2>
+                    <form id="form" method="POST" action="">
+                        {% csrf_token %}
+                    </form>
+                    <div style="margin-top: 50px;">
+                        <a href="#" onclick="document.forms['form'].submit();" style="font-size: 32px; font-weight: bold; margin-right: 30px;">Yes</a>
+                        <a href="{% url "eventpost" id=shift.event.id %}" style="font-size: 32px; font-weight: bold; margin-left: 30px;">No</a>
+                    </div>
+                </div>
+                {% elif shift.user == userprofile %}
+                <div>
+                    <h2>Do you want to cancel this shift?</h2>
+                    <form id="form" method="POST" action="">
+                        {% csrf_token %}
+                    </form>
+                    <div style="margin-top: 50px;">
+                        <a href="#" onclick="document.forms['form'].submit();" style="font-size: 32px; font-weight: bold; margin-right: 30px;">Yes</a>
+                        <a href="{% url "eventpost" id=shift.event.id %}" style="font-size: 32px; font-weight: bold; margin-left: 30px;">No</a>
+                    </div>
+                </div>
+                {% endif %}
+                {% endif %}
+                {% else %}
+                <h1>Please login to see shifts</h1>
+                <a href="{% url 'login' %}">Login here</a>
+                {% endif %} 
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <img src="{% static 'img/seal.svg' %}">
+    </div>
+</body>
+</html>

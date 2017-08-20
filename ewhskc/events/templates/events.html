@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div id="header">
+        <a href="{% url 'index' %}"><img src="{% static 'img/logo.svg' %}"></a>
+        <ul id="nav">
+            <li><a href="{% url 'updates' %}">Updates</a></li>
+            <li><a href="{% url 'events' %}" class="active">Events</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'profile' %}">Profile</a></li>
+            <li><a href="{% url 'logout' %}" class="loginout">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'login' %}" class="loginout">Login</a></li>
+            {% endif %} 
+        </ul>
+    </div>
+    {% if events %}
+    <div id="cover-events" class="cover">
+        <div id="cover-text">
+           <h2>Next Event</h2>
+           <h3>{{ latestevent.title }}</h3>
+        </div>
+    </div>
+    {% else %}
+    <div id="cover-events" class="cover">
+        <div id="cover-text">
+           <h2>Events</h2>
+        </div>
+    </div>
+    {% endif %}
+    <div id="content">
+        {% if events %}
+        {% for event in events %}
+        <div class="section">
+            <div class="text-section ta-center">
+                <div>
+                    <a class="post-title" href="{% url "eventpost" id=event.id %}">{{ event.title }}</a>
+                    <h2>{{ event.publish_date }}</h2>
+                    <p>{{ event.description|truncatechars:400 }}</p>
+                </div>
+                <div style="margin-top: 50px;">
+                    <a href="{% url "eventpost" id=event.id %}" class="button">More information</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <div class="section">
+            <div class="text-section ta-center">
+                <h1>There are no events at the moment.</h1>
+            </div>
+        </div>
+        {% endif %}
+        <div class="section">
+            <div class="text-section ta-center pagination">
+                <h2>Page {{ events.number }} of {{ events.paginator.num_pages }}</h2>
+                {% if events.has_previous %}
+                    <a href="?page={{ events.previous_page_number }}">Previous</a><br/>
+                {% endif %}
+                {% if events.has_next %}
+                    <a href="?page={{ events.next_page_number }}">Next</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <img src="{% static 'img/seal.svg' %}">
+    </div>
+</body>
+</html>
