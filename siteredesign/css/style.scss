@@ -110,15 +110,16 @@ body, html{
     padding: 15px 100px;
     background-color: rgb(0, 51, 102);
     background-color: rgba(0, 51, 102, 0.95);
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     user-select: none;
+    z-index: 1;
     img{
-        height: 60px;
-        padding: 20px 0px;
+        height: 50px;
+        padding: 25px 0px;
         width: auto;
     }
     #nav{
@@ -163,7 +164,7 @@ body, html{
         background-color: rgba(0, 0, 0, 0.4);
         h2{
             color: rgb(255, 255, 255);
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.9);
             font-size: 72px;
             text-transform: uppercase;
             text-align: center;
@@ -173,7 +174,7 @@ body, html{
         }
         h3{
             color: rgb(255, 255,255);
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.9);
             font-size: 32px;
             text-transform: uppercase;
             text-align: center;
@@ -185,9 +186,11 @@ body, html{
     }
 }
 #content{
+    overflow: hidden;
+    min-height: calc(100vh - 330px);
     .section{
         margin: 0 auto;
-        padding: 0 10%;
+        padding: 0px 10%;
         .text-section{
             padding: 50px 10%;
             h1{
@@ -248,11 +251,65 @@ body, html{
             background-color: $gold;
         }
     }
+    .sidebar{
+        margin: 0 auto;
+        .text-section{
+            padding: 50px 10%;
+            h1{
+                font-size: 48px;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+            h2{
+                font-size: 24px;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+            p{
+                font-size: 18px;
+                line-height: 30px;
+                padding-top: 25px;
+                padding-bottom: 25px;
+            }
+            p:last-child{
+                padding-bottom: 0px;
+            }
+            ul{
+                margin-top: 15px;
+                li{
+                    line-height: 30px;
+                    text-transform: uppercase;
+                    a{
+                        font-size: 24px;
+                        font-weight: bold;
+                    }
+                    span{
+                        font-size: 18px;
+                        font-weight: normal;
+                    }
+                }
+            }
+        }
+    }
+    .left-two-thirds{
+        width: 50%;
+        float: left;
+        padding: 0px 0px 0px 10%;
+    }
+    .right-one-thirds{
+        width: 30%;
+        float: right;
+        padding: 0px 10% 0px 0px;
+    }
+}
+#content.no-cover{
+    padding-top: 130px;
 }
 #footer{
     background-color: $black;
     padding: 50px 0px;
     user-select: none;
+    clear: both;
     img{
         height: 100px;
         width: auto;

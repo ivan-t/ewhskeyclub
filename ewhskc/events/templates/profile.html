@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div id="header">
+        <a href="{% url 'index' %}"><img src="{% static 'img/logo.svg' %}"></a>
+        <ul id="nav">
+            <li><a href="{% url 'updates' %}">Updates</a></li>
+            <li><a href="{% url 'events' %}">Events</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'profile' %}" class="active">Profile</a></li>
+            <li><a href="{% url 'logout' %}" class="loginout">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'login' %}" class="loginout">Login</a></li>
+            {% endif %} 
+        </ul>
+    </div>
+    <div id="content" class="no-cover">
+        <div class="section">
+            {% if user.is_authenticated %}
+            <div class="text-section uppercase" style="padding: 50px 10% 25px;">
+                <h1>Profile of {{ userprofile.username }}</h1>
+                <div style="margin: 15px 0px;">
+                    <h2>Name: {{ userprofile.first_name}} {{ userprofile.last_name }}</h2>
+                    <h2>Email: {{ userprofile.email }}</h2>
+                    <h2>Last login: {{ userprofile.last_login }}</h2>
+                </div>
+            </div>
+            {% if shifts %}
+            <div class="text-section uppercase" style="padding: 25px 10% 50px;">
+                <h1>Shifts</h1>
+            {% for shift in shifts %}
+                <div class="shift">
+                    <a href="{% url "eventpost" id=shift.event.id %}">{{ shift.event|truncatechars:50 }} at {{ shift.time }} on {{ shift.event.event_date }}</a>
+                </div>
+            {% endfor %}
+            </div>
+            {% else %}
+            <div class="text-section uppercase" style="padding: 25px 10% 50px;">
+                    <h1>Shifts</h1>
+                    <div class="shift">
+                    <h2>You currently have no shifts</h2>
+                    </div>
+            </div>
+            {% endif %}
+            {% else %}
+            <div class="text-section ta-center uppercase">
+                <h1>Please login to see your profile</h1>
+                <a href="{% url 'login' %}">Login here</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    <div id="footer">
+        <img src="{% static 'img/seal.svg' %}">
+    </div>
+</body>
+</html>

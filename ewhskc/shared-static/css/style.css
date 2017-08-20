@@ -1,0 +1,300 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html, body {
+  font-family: "Myriad Pro", Arial, Helvetica, sans-serif; }
+
+h1 {
+  font-size: 64px;
+  font-weight: normal;
+  color: #231f20; }
+
+h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333333; }
+
+p {
+  font-size: 16px;
+  font-weight: normal;
+  color: #333333; }
+
+a {
+  font-size: 16px;
+  font-weight: normal;
+  color: #00aeef;
+  text-decoration: none; }
+
+a:hover {
+  color: #003366; }
+
+body, html {
+  height: 100%; }
+
+::selection {
+  color: #ffffff;
+  background-color: #75c5f8; }
+
+::-moz-selection {
+  color: #ffffff;
+  background-color: #75c5f8; }
+
+#header {
+  height: 100px;
+  padding: 15px 100px;
+  background-color: #003366;
+  background-color: rgba(0, 51, 102, 0.95);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  user-select: none;
+  z-index: 1; }
+  #header img {
+    height: 50px;
+    padding: 25px 0px;
+    width: auto; }
+  #header #nav {
+    float: right;
+    line-height: 100px; }
+    #header #nav li {
+      display: inline;
+      margin: 0px 20px; }
+      #header #nav li a {
+        font-size: 18px;
+        font-weight: bold;
+        color: #ffffff;
+        text-transform: uppercase; }
+      #header #nav li a:hover {
+        color: #75c5f8; }
+      #header #nav li a.active {
+        color: #75c5f8;
+        border-bottom: 4px solid #75c5f8; }
+      #header #nav li a.loginout {
+        color: #b49759; }
+      #header #nav li a.loginout:hover {
+        color: #75c5f8; }
+
+#cover-index {
+  background-image: url(../img/cover-index.jpg); }
+
+#cover-updates {
+  background-image: url(../img/cover-updates.jpg); }
+
+#cover-events {
+  background-image: url(../img/cover-events.jpg); }
+
+.cover {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  user-select: none; }
+  .cover #cover-text {
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); }
+    .cover #cover-text h2 {
+      color: white;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 72px;
+      text-transform: uppercase;
+      text-align: center;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%); }
+    .cover #cover-text h3 {
+      color: white;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 32px;
+      text-transform: uppercase;
+      text-align: center;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      font-weight: bold; }
+
+#content {
+  overflow: hidden; }
+  #content .section {
+    margin: 0 auto;
+    padding: 0px 10%; }
+    #content .section .text-section {
+      padding: 50px 10%; }
+      #content .section .text-section h1, #content .section .text-section .post-title {
+        font-size: 48px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #003366; }
+      #content .section .text-section .post-title {
+        color: #231f20; }
+      #content .section .text-section .post-title:hover {
+        color: #75c5f8; }
+      #content .section .text-section h2 {
+        font-size: 24px;
+        font-weight: bold;
+        text-transform: uppercase; }
+      #content .section .text-section p {
+        font-size: 18px;
+        line-height: 30px;
+        padding-top: 25px;
+        padding-bottom: 25px; }
+      #content .section .text-section p:last-child {
+        padding-bottom: 0px; }
+      #content .section .text-section .shift {
+        margin: 15px 0px; }
+        #content .section .text-section .shift a {
+          font-size: 18px; }
+    #content .section .pagination a {
+      color: #231f20;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin: 10px; }
+    #content .section .pagination a:hover {
+      color: #00aeef; }
+    #content .section a.button {
+      color: #ffffff;
+      background-color: #75c5f8;
+      border: 1px solid #75c5f8;
+      padding: 20px 30px 17px;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 1px;
+      user-select: none; }
+    #content .section a.button:hover {
+      background-color: #003366;
+      border: 1px solid #003366; }
+  #content .section:nth-child(even) {
+    background-color: #75c5f8; }
+    #content .section:nth-child(even) .text-section h1, #content .section:nth-child(even) .text-section h2, #content .section:nth-child(even) .text-section p, #content .section:nth-child(even) .text-section .post-title {
+      color: #ffffff; }
+    #content .section:nth-child(even) .text-section .post-title:hover {
+      color: #003366; }
+    #content .section:nth-child(even) .pagination a {
+      color: #ffffff;
+      text-transform: uppercase;
+      font-weight: bold; }
+    #content .section:nth-child(even) .pagination a:hover {
+      color: #00aeef; }
+    #content .section:nth-child(even) a.button {
+      color: #ffffff;
+      background-color: transparent;
+      border: 1px solid #ffffff;
+      padding: 20px 30px 17px;
+      margin: 0 auto;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 1px;
+      user-select: none; }
+    #content .section:nth-child(even) a.button:hover {
+      border: 1px solid #b49759;
+      background-color: #b49759;
+      color: #ffffff; }
+    #content .section:nth-child(even) a {
+      color: #ffffff; }
+    #content .section:nth-child(even) a:hover {
+      color: #003366; }
+  #content .sidebar {
+    margin: 0 auto; }
+    #content .sidebar .text-section {
+      padding: 50px 10%; }
+      #content .sidebar .text-section h1 {
+        font-size: 48px;
+        font-weight: bold;
+        text-transform: uppercase; }
+      #content .sidebar .text-section h2 {
+        font-size: 24px;
+        font-weight: bold;
+        text-transform: uppercase; }
+      #content .sidebar .text-section p {
+        font-size: 18px;
+        line-height: 30px;
+        padding-top: 25px;
+        padding-bottom: 25px; }
+      #content .sidebar .text-section p:last-child {
+        padding-bottom: 0px; }
+      #content .sidebar .text-section ul {
+        margin-top: 15px; }
+        #content .sidebar .text-section ul li {
+          line-height: 30px;
+          text-transform: uppercase; }
+          #content .sidebar .text-section ul li a {
+            font-size: 24px;
+            font-weight: bold; }
+          #content .sidebar .text-section ul li span {
+            font-size: 18px;
+            font-weight: normal; }
+      #content .sidebar .text-section .shift {
+        margin: 15px 0px; }
+        #content .sidebar .text-section .shift a {
+          font-size: 18px; }
+  #content .left-two-thirds {
+    width: 50%;
+    float: left;
+    padding: 0px 0px 0px 10%; }
+  #content .right-one-thirds {
+    width: 30%;
+    float: right;
+    padding: 0px 10% 0px 0px; }
+
+#content.no-cover {
+  padding-top: 130px;
+  min-height: calc(100vh - 330px); }
+
+#footer {
+  background-color: #231f20;
+  padding: 50px 0px;
+  user-select: none;
+  clear: both; }
+  #footer img {
+    height: 100px;
+    width: auto;
+    display: block;
+    margin: 0 auto; }
+
+.ta-center {
+  text-align: center; }
+
+.uppercase {
+  text-transform: uppercase; }
+
+/*# sourceMappingURL=style.css.map */

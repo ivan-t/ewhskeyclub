@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div id="header">
+        <a href="{% url 'index' %}"><img src="{% static 'img/logo.svg' %}"></a>
+        <ul id="nav">
+            <li><a href="{% url 'updates' %}">Updates</a></li>
+            <li><a href="{% url 'events' %}" class="active">Events</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'profile' %}">Profile</a></li>
+            <li><a href="{% url 'logout' %}" class="loginout">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'login' %}" class="loginout">Login</a></li>
+            {% endif %} 
+        </ul>
+    </div>
+    <div id="content" class="no-cover">
+        <div class="section left-two-thirds">
+            <div class="text-section">
+                <h1>{{ event.title }}</h1>
+                <h2>{{ event.event_date }}</h2>
+                <h2>{{ event.start_time }} - {{ event.end_time }}</h2>
+                {{ event.description|linebreaks }}
+            </div>
+        </div>
+        <div class="sidebar right-one-thirds">
+        {% if user.is_authenticated %}
+        {% if event_shifts %}
+            <div class="text-section uppercase">
+                <h1>Event Shifts</h1>
+                {% for shift in event_shifts %}
+                <div class="shift">
+                    <h2>Time: {{ shift.time }}</h2>
+                    {% if event.is_past_due %}
+                    {% if shift.user == null %}
+                    <h2>Volunteer: None</h2>
+                    {% elif shift.user == userprofile %}
+                    <h2>Volunteer: {{ shift.user }}</h2>
+                    {% else %}
+                    <h2>Volunteer: {{ shift.user }}</h2>
+                    {% endif %}
+                    {% else %}
+                    {% if shift.user == null %}
+                    <h2>Volunteer: None</h2>
+                    <a href="{% url "shift" id=shift.id %}">Sign up for this shift</a>
+                    {% elif shift.user == userprofile %}
+                    <h2>Volunteer: {{ shift.user }}</h2>
+                    <a href="{% url "shift" id=shift.id %}">Cancel this shift</a>
+                    {% else %}
+                    <h2>Volunteer: {{ shift.user }}</h2>
+                    {% endif %}
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="text-section">
+                <h1>Recent Events</h1>
+                <ul>
+                    {% if latestevents|length > 1 %}
+                    {% for item in latestevents %}
+                    {% if item.id != event.id %}
+                    <li><a href="{% url "eventpost" id=item.id %}">{{ item.title }}</a></li>
+                    <li><span>{{ item.event_date }}<span></li>
+                    {% endif %}
+                    {% endfor %}
+                    {% else %}
+                    <li><h2>No other posts.</h2></li>
+                    {% endif %}
+                </ul>
+            </div>
+        {% endif %}
+        {% else %}
+        {% if event_shifts %}
+            <div class="text-section uppercase">
+                <h1>Event Shifts</h1>
+                <div class="shift">
+                    <a href="{% url "login"%}?next={{request.path}}">Login to see the shifts for this event</a>
+                </div>
+            </div>
+        {% else %}
+            <div class="text-section">
+                <h1>Recent Events</h1>
+                <ul>
+                    {% if latestevents|length > 1 %}
+                    {% for item in latestevents %}
+                    {% if item.id != event.id %}
+                    <li><a href="{% url "eventpost" id=item.id %}">{{ item.title }}</a></li>
+                    <li><span>{{ item.event_date }}<span></li>
+                    {% endif %}
+                    {% endfor %}
+                    {% else %}
+                    <li><h2>No other posts.</h2></li>
+                    {% endif %}
+                </ul>
+            </div>
+        {% endif %}
+        {% endif %}
+        </div>
+    </div>
+    <div id="footer">
+        <img src="{% static 'img/seal.svg' %}">
+    </div>
+</body>
+</html>

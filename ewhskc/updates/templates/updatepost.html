@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div id="header">
+        <a href="{% url 'index' %}"><img src="{% static 'img/logo.svg' %}"></a>
+        <ul id="nav">
+            <li><a href="{% url 'updates' %}" class="active">Updates</a></li>
+            <li><a href="{% url 'events' %}">Events</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'profile' %}">Profile</a></li>
+            <li><a href="{% url 'logout' %}" class="loginout">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'login' %}" class="loginout">Login</a></li>
+            {% endif %} 
+        </ul>
+    </div>
+    <div id="content" class="no-cover">
+        <div class="section left-two-thirds">
+            <div class="text-section">
+                <h1>{{ post.title }}</h1>
+                <h2>{{ post.publish_date }}</h2>
+                <img src="{{ post.image }}">
+                {{ post.content|linebreaks }}
+            </div>
+        </div>
+        <div class="sidebar right-one-thirds">
+            <div class="text-section">
+                <h1>Recent Updates</h1>
+                <ul>
+                    {% if latestposts|length > 1 %}
+                    {% for item in latestposts %}
+                    {% if item.id != post.id %}
+                    <li><a href="{% url "updatepost" id=item.id %}">{{ item.title }}</a></li>
+                    <li><span>{{ item.publish_date }}<span></li>
+                    {% endif %}
+                    {% endfor %}
+                    {% else %}
+                    <li><h2>No other posts.</h2></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <img src="{% static 'img/seal.svg' %}">
+    </div>
+</body>
+</html>
