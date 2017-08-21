@@ -73,7 +73,7 @@ def shift(request, id=None):
 def profile(request, user=None):
     if request.user.is_authenticated():
         userprofile = request.user
-        shifts = Shift.objects.filter(user=userprofile).reverse
+        shifts = Shift.objects.filter(user=userprofile).reverse()
     else:
         userprofile = None
         shifts = None

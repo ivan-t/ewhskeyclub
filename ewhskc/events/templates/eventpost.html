@@ -24,7 +24,7 @@
             <div class="text-section">
                 <h1>{{ event.title }}</h1>
                 <h2>{{ event.event_date }}</h2>
-                <h2>{{ event.start_time }} - {{ event.end_time }}</h2>
+                <h2>{{ event.start_time|time:'g:i A' }} - {{ event.end_time|time:'g:i A' }}</h2>
                 {{ event.description|linebreaks }}
             </div>
         </div>
@@ -35,7 +35,7 @@
                 <h1>Event Shifts</h1>
                 {% for shift in event_shifts %}
                 <div class="shift">
-                    <h2>Time: {{ shift.time }}</h2>
+                    <h2>Time: {{ shift.time|time:'g:i A' }}</h2>
                     {% if event.is_past_due %}
                     {% if shift.user == null %}
                     <h2>Volunteer: None</h2>

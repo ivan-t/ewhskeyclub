@@ -183,7 +183,12 @@ body, html {
       #content .section .text-section .shift {
         margin: 15px 0px; }
         #content .section .text-section .shift a {
-          font-size: 18px; }
+          font-size: 18px;
+          font-weight: bold; }
+      #content .section .text-section a.highlighted {
+        color: #b49759; }
+      #content .section .text-section a.highlighted:hover {
+        color: #003366; }
     #content .section .pagination a {
       color: #231f20;
       text-transform: uppercase;
@@ -266,7 +271,8 @@ body, html {
       #content .sidebar .text-section .shift {
         margin: 15px 0px; }
         #content .sidebar .text-section .shift a {
-          font-size: 18px; }
+          font-size: 18px;
+          font-weight: bold; }
   #content .left-two-thirds {
     width: 50%;
     float: left;

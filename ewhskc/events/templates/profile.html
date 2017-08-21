@@ -34,9 +34,15 @@
             <div class="text-section uppercase" style="padding: 25px 10% 50px;">
                 <h1>Shifts</h1>
             {% for shift in shifts %}
+            {% if shift.event.is_past_due != True %}
+                <div class="shift">
+                    <a href="{% url "eventpost" id=shift.event.id %}" class="highlighted">{{ shift.event|truncatechars:50 }} at {{ shift.time }} on {{ shift.event.event_date }}</a>
+                </div>
+            {% elif shift.event.is_past_due %}
                 <div class="shift">
                     <a href="{% url "eventpost" id=shift.event.id %}">{{ shift.event|truncatechars:50 }} at {{ shift.time }} on {{ shift.event.event_date }}</a>
                 </div>
+            {% endif %}
             {% endfor %}
             </div>
             {% else %}

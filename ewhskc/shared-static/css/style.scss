@@ -228,7 +228,14 @@ body, html{
                 margin:15px 0px;
                 a{
                     font-size:18px;
+                    font-weight: bold;
                 }
+            }
+            a.highlighted{
+                color: $gold;
+            }
+            a.highlighted:hover{
+                color: $blue;
             }
         }
         .pagination{
@@ -342,6 +349,7 @@ body, html{
                 margin:15px 0px;
                 a{
                     font-size:18px;
+                    font-weight: bold;
                 }
             }
         }
