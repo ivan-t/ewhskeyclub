@@ -15,7 +15,7 @@
             <li><a href="{% url 'profile' %}">Profile</a></li>
             <li><a href="{% url 'logout' %}" class="loginout">Logout</a></li>
             {% else %}
-            <li><a href="{% url 'login' %}" class="loginout">Login</a></li>
+            <li><a href="{% url 'login' %}?next={{request.path}}" class="loginout">Login</a></li>
             {% endif %} 
         </ul>
     </div>
@@ -29,7 +29,7 @@
                     <h1>{{ shift.event.start_time|time:'g:i A' }} - {{ shift.event.end_time|time:'g:i A' }}</h1>
                     <h1>Shift Time: {{ shift.time|time:'g:i A' }}</h1>
                     {% if shift.user == null %}
-                    <h1>Registering Volunter: {{ userprofile.username }}</h1>
+                    <h1>Registering Volunter: {{ userprofile.first_name }} {{ userprofile.last_name|first }}.</h1>
                     {% else %}
                     <h1>Registered Volunteer: {{ shift.user }}</h1>
                     {% endif %}
@@ -61,7 +61,7 @@
                 {% endif %}
                 {% else %}
                 <h1>Please login to see shifts</h1>
-                <a href="{% url 'login' %}">Login here</a>
+                <a href="{% url 'login' %}?next={{request.path}}">Login here</a>
                 {% endif %} 
             </div>
         </div>
