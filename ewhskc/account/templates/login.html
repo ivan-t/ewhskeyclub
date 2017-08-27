@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div id="header">
+        <a href="{% url 'index' %}"><img src="{% static 'img/logo.svg' %}"></a>
+        <ul id="nav">
+            <li><a href="{% url 'updates' %}">Updates</a></li>
+            <li><a href="{% url 'events' %}">Events</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'profile' %}">Profile</a></li>
+            <li><a href="{% url 'logout' %}?next={{request.path}}" class="loginout">Logout</a></li>
+            {% endif %}
+        </ul>
+    </div>
+    <div id="content" class="no-cover">
+        <div class="section">
+            <div class="text-section ta-center">
+                {% if user.is_authenticated %}
+                <h1>You are already logged in.</h1>
+                {% else %}
+                <form id="form" method='POST' action='' novalidate>
+                {% csrf_token %}
+                    <div class="form-errors">
+                       {{ form.non_field_errors }}
+                    </div>
+                {% for field in form %}
+                    <div class="form-field">
+                        {{ field.label_tag }} {{ field }}
+                    </div>
+                    {% if field.errors %}
+                    <div class="field-errors">
+                        {{ field.errors }}
+                    </div>
+                    {% endif %}
+                {% endfor %}
+                <div style="margin-top: 15px;">
+                    <a href="{% url 'register' %}">Don't have an account?</a>
+                </div>
+                <div style="margin-top: 35px;">
+                    <a href="#" onclick="document.forms['form'].submit();" class="button">Login</a>
+                </div>
+                <input type="submit" style="display: none" />
+                </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <img src="{% static 'img/seal.svg' %}">
+    </div>
+</body>
+</html>

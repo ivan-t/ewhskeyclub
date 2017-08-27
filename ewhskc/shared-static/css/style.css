@@ -189,6 +189,27 @@ body, html {
         color: #b49759; }
       #content .section .text-section a.highlighted:hover {
         color: #003366; }
+      #content .section .text-section .form-errors {
+        font-weight: bold;
+        text-transform: uppercase;
+        padding-bottom: 50px; }
+        #content .section .text-section .form-errors li {
+          color: #b49759;
+          font-size: 32px; }
+      #content .section .text-section .form-field {
+        font-weight: bold; }
+        #content .section .text-section .form-field label {
+          color: #003366;
+          text-transform: uppercase;
+          font-size: 24px; }
+        #content .section .text-section .form-field input {
+          color: #333333;
+          font-size: 24px; }
+      #content .section .text-section .field-errors li {
+        color: #b49759;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: 10px 0px; }
     #content .section .pagination a {
       color: #231f20;
       text-transform: uppercase;

@@ -21,7 +21,7 @@ import events.views
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='index.html'), name='index'),
     url(r'^admin/', admin.site.urls),
-    url(r'^accounts/', include('django.contrib.auth.urls')),
+    url(r'^account/', include('account.urls')),
     url(r'^profile/', events.views.profile, name="profile"),
     url(r'^updates/', include('updates.urls')),
     url(r'^events/', include('events.urls')),
