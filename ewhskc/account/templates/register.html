@@ -31,7 +31,7 @@
                     </div>
                 {% for field in form %}
                     <div class="form-field">
-                        {{ field.label_tag }} {{ field }}
+                        {{ field }}
                     </div>
                     {% if field.errors %}
                     <div class="field-errors">
@@ -42,7 +42,7 @@
                 <div style="margin-top: 15px;">
                     <a href="{% url 'login' %}">Already have an account?</a>
                 </div>
-                <div style="margin-top: 35px;">
+                <div style="margin: 35px 0px 50px;">
                     <a href="#" onclick="document.forms['form'].submit();" class="button">Register</a>
                 </div>
                 <input type="submit" style="display: none" />

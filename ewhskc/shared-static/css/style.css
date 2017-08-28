@@ -191,6 +191,9 @@ body, html {
         color: #b49759; }
       #content .section .text-section a.highlighted:hover {
         color: #003366; }
+      #content .section .text-section #form {
+        max-width: 600px;
+        margin: 0px auto; }
       #content .section .text-section .form-errors {
         font-weight: bold;
         text-transform: uppercase;
@@ -205,8 +208,21 @@ body, html {
           text-transform: uppercase;
           font-size: 24px; }
         #content .section .text-section .form-field input {
-          color: #333333;
-          font-size: 24px; }
+          color: #003366;
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: 24px;
+          font-family: inherit;
+          outline: none;
+          box-sizing: border-box;
+          width: 100%;
+          margin: 2% 0px;
+          border: 1px solid #cccccc;
+          padding: 3.5% 2% 2%; }
+        #content .section .text-section .form-field input:focus {
+          box-shadow: 0 0 5px #b49759;
+          padding: 3.5% 2% 2%;
+          border: 1px solid #b49759; }
       #content .section .text-section .field-errors li {
         color: #b49759;
         font-weight: bold;
@@ -349,6 +365,17 @@ body, html {
         #header #nav li a.active {
           border-bottom: none; }
 
+  .cover {
+    height: 75%; }
+
+  #content .section {
+    padding: 0px 5%; }
+    #content .section .text-section {
+      padding: 50px 5%; }
+  #content .sidebar {
+    padding: 0px; }
+    #content .sidebar .text-section {
+      padding: 50px 5%; }
   #content .left-two-thirds {
     width: 100%;
     float: none;
@@ -383,32 +410,38 @@ body, html {
     font-size: 24px; }
 
   #content .section {
-    padding: 0px; }
-    #content .section .text-section h1, #content .section .text-section .post-title {
-      font-size: 36px; }
-    #content .section .text-section h2 {
-      font-size: 18px; }
-    #content .section .text-section p {
-      font-size: 13.5px; }
-    #content .section .text-section .shift a {
-      font-size: 13.5px; }
-    #content .section .text-section .form-errors {
-      font-size: 24px; }
-    #content .section .text-section .form-field label {
-      font-size: 18px; }
-    #content .section .text-section .form-field input {
-      font-size: 18px; }
-  #content .sidebar .text-section h1 {
-    font-size: 36px; }
-  #content .sidebar .text-section h2 {
-    font-size: 18px; }
-  #content .sidebar .text-section p {
-    font-size: 13.5px; }
-  #content .sidebar .text-section ul li a {
-    font-size: 18px; }
-  #content .sidebar .text-section ul li span {
-    font-size: 13.5px; }
-  #content .sidebar .text-section .shift a {
-    font-size: 13.5px; } }
+    padding: 0px 2.5%; }
+    #content .section .text-section {
+      padding: 50px 2.5%; }
+      #content .section .text-section h1, #content .section .text-section .post-title {
+        font-size: 36px; }
+      #content .section .text-section h2 {
+        font-size: 18px; }
+      #content .section .text-section p {
+        font-size: 13.5px; }
+      #content .section .text-section .shift a {
+        font-size: 13.5px; }
+      #content .section .text-section .form-errors {
+        font-size: 24px; }
+      #content .section .text-section .form-field label {
+        font-size: 18px; }
+      #content .section .text-section .form-field input {
+        font-size: 18px; }
+  #content .sidebar {
+    padding: 0px 2.5%; }
+    #content .sidebar .text-section {
+      padding: 50px 2.5%; }
+      #content .sidebar .text-section h1 {
+        font-size: 36px; }
+      #content .sidebar .text-section h2 {
+        font-size: 18px; }
+      #content .sidebar .text-section p {
+        font-size: 13.5px; }
+      #content .sidebar .text-section ul li a {
+        font-size: 18px; }
+      #content .sidebar .text-section ul li span {
+        font-size: 13.5px; }
+      #content .sidebar .text-section .shift a {
+        font-size: 13.5px; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -5,8 +5,8 @@ from django.core.validators import RegexValidator
 User = get_user_model()
 
 class LoginForm(forms.Form):
-    username = forms.CharField()
-    password = forms.CharField(widget=forms.PasswordInput)
+    username = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Username'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder':'Password'}))
 
     def clean(self):
         username = self.cleaned_data.get("username")
@@ -26,13 +26,13 @@ class RegisterForm(forms.ModelForm):
     letters_only = RegexValidator(r'^[a-zA-Z]+$', 'This field must contain only letters.')
     alphanumeric = RegexValidator(r'^[a-zA-Z0-9]+$', 'This field must contain only letters or numbers.')
 
-    username = forms.Field(label='Username', validators=[alphanumeric])
-    email = forms.EmailField(label='Email')
-    confirm_email = forms.EmailField(label='Confirm email')
-    first_name = forms.Field(label='First name', validators=[letters_only])
-    last_name = forms.Field(label='Last name', validators=[letters_only])
-    password = forms.CharField(widget=forms.PasswordInput, label='Password')
-    confirm_password = forms.CharField(widget=forms.PasswordInput, label='Confirm password')
+    username = forms.Field(label='Username', validators=[alphanumeric], widget=forms.TextInput(attrs={'placeholder':'Username'}))
+    email = forms.EmailField(label='Email', widget=forms.EmailInput(attrs={'placeholder':'Email'}))
+    confirm_email = forms.EmailField(label='Confirm email', widget=forms.EmailInput(attrs={'placeholder':'Confirm email'}))
+    first_name = forms.Field(label='First name', validators=[letters_only], widget=forms.TextInput(attrs={'placeholder':'First name'}))
+    last_name = forms.Field(label='Last name', validators=[letters_only], widget=forms.TextInput(attrs={'placeholder':'Last name'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder':'Password'}), label='Password')
+    confirm_password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder':'Confirm password'}), label='Confirm password')
 
     class Meta:
         model = User

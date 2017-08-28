@@ -240,6 +240,10 @@ body, html{
             a.highlighted:hover{
                 color: $blue;
             }
+            #form{
+                max-width: 600px;
+                margin: 0px auto;
+            }
             .form-errors{
                 font-weight: bold;
                 text-transform: uppercase;
@@ -257,8 +261,22 @@ body, html{
                     font-size: 24px;
                 }
                 input{
-                    color: $dark-grey;
+                    color: $blue;
+                    text-transform: uppercase;
+                    font-weight: bold;
                     font-size: 24px;
+                    font-family: inherit;
+                    outline: none;
+                    box-sizing: border-box;
+                    width: 100%;
+                    margin: 2% 0px;
+                    border: 1px solid $light-grey;
+                    padding: 3.5% 2% 2%;
+                }
+                input:focus{
+                    box-shadow: 0 0 5px $gold;
+                    padding: 3.5% 2% 2%;
+                    border: 1px solid $gold;
                 }
             }
             .field-errors{
@@ -452,7 +470,22 @@ body, html{
             }
         }
     }
+    .cover{
+        height: 75%;
+    }
     #content{
+        .section{
+            padding: 0px 5%;
+            .text-section{
+                padding: 50px 5%;
+            }
+        }
+        .sidebar{
+            padding: 0px;
+            .text-section{
+                padding: 50px 5%;
+            }
+        }
         .left-two-thirds{
             width: 100%;
             float: none;
@@ -502,8 +535,9 @@ body, html{
     }
     #content{
         .section{
-            padding: 0px;
+            padding: 0px 2.5%;
             .text-section{
+                padding: 50px 2.5%;
                 h1, .post-title{
                     font-size: 36px;
                 }
@@ -532,7 +566,9 @@ body, html{
             }
         }
         .sidebar{
+            padding: 0px 2.5%;
             .text-section{
+                padding: 50px 2.5%;
                 h1{
                     font-size: 36px;
                 }
