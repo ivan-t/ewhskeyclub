@@ -106,7 +106,8 @@ body, html {
         font-size: 18px;
         font-weight: bold;
         color: #ffffff;
-        text-transform: uppercase; }
+        text-transform: uppercase;
+        line-height: normal; }
       #header #nav li a:hover {
         color: #75c5f8; }
       #header #nav li a.active {
