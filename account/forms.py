@@ -10,7 +10,7 @@ class LoginForm(forms.Form):
 
     def clean(self):
         username = self.cleaned_data.get("username").lower()
-        password = self.cleaned_data.get("password").lower()
+        password = self.cleaned_data.get("password")
 
         if username and password:
             user = authenticate(username=username, password=password)
