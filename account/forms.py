@@ -10,7 +10,10 @@ class LoginForm(forms.Form):
 
     def clean(self):
         username = self.cleaned_data.get("username")
-        lower_username = username.lower()
+        if username:
+            lower_username = username.lower()
+        else:
+            lower_username = None
         password = self.cleaned_data.get("password")
 
         if username and password:
