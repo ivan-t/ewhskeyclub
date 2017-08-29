@@ -21,6 +21,8 @@ class LoginForm(forms.Form):
                 raise forms.ValidationError("Incorrect username or password.")
             if not user.is_active:
                 raise forms.ValidationError("This user is no longer active.")
+        else:
+            raise forms.ValidationError("Both fields are required.")
         return super(LoginForm, self).clean()
 
 class RegisterForm(forms.ModelForm):
