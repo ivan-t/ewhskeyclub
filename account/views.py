@@ -7,8 +7,8 @@ def login_view(request):
     form = LoginForm(request.POST or None)
     next = request.GET.get('next')
     if form.is_valid():
-        username = form.cleaned_data.get("username").lower()
-        password = form.cleaned_data.get('password').lower()
+        username = form.cleaned_data.get("username")
+        password = form.cleaned_data.get('password')
         user = authenticate(username=username, password=password)
         login(request, user)
         if next:
