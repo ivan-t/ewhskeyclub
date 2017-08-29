@@ -347,7 +347,16 @@ body, html {
   #header {
     padding: 15px 50px; }
     #header #nav li {
-      margin: 0px 10px; } }
+      margin: 0px 10px; }
+
+  #content .left-two-thirds {
+    width: 100%;
+    float: none;
+    padding: 0px; }
+  #content .right-one-thirds {
+    width: 100%;
+    float: none;
+    padding: 0px; } }
 @media screen and (max-width: 768px) {
   #header {
     text-align: center;
@@ -377,14 +386,6 @@ body, html {
     padding: 0px; }
     #content .sidebar .text-section {
       padding: 50px 5%; }
-  #content .left-two-thirds {
-    width: 100%;
-    float: none;
-    padding: 0px; }
-  #content .right-one-thirds {
-    width: 100%;
-    float: none;
-    padding: 0px; }
 
   #content.no-cover {
     position: relative;

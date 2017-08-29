@@ -448,6 +448,18 @@ body, html{
             }
         }
     }
+    #content{
+        .left-two-thirds{
+            width: 100%;
+            float: none;
+            padding: 0px;
+        }
+        .right-one-thirds{
+            width: 100%;
+            float: none;
+            padding: 0px;
+        }
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -486,16 +498,6 @@ body, html{
             .text-section{
                 padding: 50px 5%;
             }
-        }
-        .left-two-thirds{
-            width: 100%;
-            float: none;
-            padding: 0px;
-        }
-        .right-one-thirds{
-            width: 100%;
-            float: none;
-            padding: 0px;
         }
     }
     #content.no-cover{
