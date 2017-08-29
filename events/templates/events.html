@@ -43,7 +43,7 @@
             <div class="text-section ta-center">
                 <div>
                     <a class="post-title" href="{% url "eventpost" id=event.id %}">{{ event.title }}</a>
-                    <h2>{{ event.publish_date }}</h2>
+                    <h2>{{ event.event_date }}</h2>
                     <p>{{ event.description|truncatechars:400 }}</p>
                 </div>
                 <div style="margin-top: 50px;">
