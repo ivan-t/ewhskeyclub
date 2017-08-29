@@ -9,11 +9,12 @@ class LoginForm(forms.Form):
     password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder':'Password'}))
 
     def clean(self):
-        username = self.cleaned_data.get("username").lower()
+        username = self.cleaned_data.get("username")
+        lower_username = username.lower()
         password = self.cleaned_data.get("password")
 
         if username and password:
-            user = authenticate(username=username, password=password)
+            user = authenticate(username=lower_username, password=password)
             if not user:
                 raise forms.ValidationError("Incorrect username or password.")
             if not user.check_password(password):
