@@ -31,7 +31,7 @@
                 <h1>{{ event.title }}</h1>
                 <h2>{{ event.event_date }}</h2>
                 <h2>{{ event.start_time|time:'g:i A' }} - {{ event.end_time|time:'g:i A' }}</h2>
-                {{ event.description|linebreaks }}
+                {{ event.description|linebreaks|urlize }}
             </div>
         </div>
         <div class="sidebar right-one-thirds">

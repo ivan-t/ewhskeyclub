@@ -30,7 +30,7 @@
             <div class="text-section">
                 <h1>{{ post.title }}</h1>
                 <h2>{{ post.publish_date }}</h2>
-                {{ post.content|linebreaks }}
+                {{ post.content|linebreaks|urlize }}
             </div>
         </div>
         <div class="sidebar right-one-thirds">
