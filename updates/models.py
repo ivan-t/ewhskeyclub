@@ -6,7 +6,6 @@ class Post(models.Model):
     title =  models.CharField(max_length=200)
     publish_date = models.DateField(default=date.today)
     content = models.TextField()
-    image = models.ImageField(blank=True, null=True)
     last_edited = models.DateTimeField(auto_now=True)
     published = models.BooleanField(default=False)
 
