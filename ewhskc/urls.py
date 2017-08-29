@@ -26,3 +26,6 @@ urlpatterns = [
     url(r'^updates/', include('updates.urls')),
     url(r'^events/', include('events.urls')),
 ]
+
+handler404 = events.views.handler404
+handler500 = events.views.handler500
