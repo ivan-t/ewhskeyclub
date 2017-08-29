@@ -2,6 +2,10 @@
 
 {% block title %}EWHS KEY CLUB | {{ title }}{% endblock %}
 
+{% block extrahead %}
+<link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+{% endblock %}
+
 {% block branding %}
 <h1 id="site-name"><a href="{% url 'admin:index' %}">EWHS Key Club</a></h1>
 {% endblock %}
