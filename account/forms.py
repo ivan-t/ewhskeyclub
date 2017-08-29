@@ -15,6 +15,11 @@ class LoginForm(forms.Form):
             'password',
         ]
 
+    def __init__(self):
+        super(LoginForm, self).__init__()
+        for field in self.fields:
+            self.fields[field].required = True
+
     def clean(self):
         username = self.cleaned_data.get("username").lower()
         password = self.cleaned_data.get("password").lower()
