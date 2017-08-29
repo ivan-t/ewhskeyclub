@@ -5,8 +5,8 @@ from django.core.validators import RegexValidator
 User = get_user_model()
 
 class LoginForm(forms.Form):
-    username = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Username'}))
-    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder':'Password'}))
+    username = forms.CharField(widget=forms.TextInput(required=True, attrs={'placeholder':'Username'}))
+    password = forms.CharField(widget=forms.PasswordInput(required=True, attrs={'placeholder':'Password'}))
 
     class Meta:
         model = User
@@ -14,11 +14,6 @@ class LoginForm(forms.Form):
             'username',
             'password',
         ]
-
-    def __init__(self):
-        super(LoginForm, self).__init__()
-        for field in self.fields:
-            self.fields[field].required = True
 
     def clean(self):
         username = self.cleaned_data.get("username").lower()
