@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>
+        {% if user.is_authenticated %}
+        EWHS KEY CLUB | {{ shift.event }} ({{ shift.time|time:'g:i A' }})
+        {% else %}
+        EWHS KEY CLUB
+        {% endif %}
+    </title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
