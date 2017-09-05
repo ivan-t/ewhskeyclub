@@ -43,7 +43,7 @@
                     <h2>Last login: {{ userprofile.last_login }}</h2>
                 </div>
                 {% if user.is_staff %}
-                <a href="{% url 'admin:index' %}">Staff access</a>
+                <a href="{% url 'admin:index' %}" style="font-weight: bold;">Staff access</a>
                 {% endif %}
             </div>
             {% if shifts %}
