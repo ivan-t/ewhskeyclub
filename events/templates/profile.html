@@ -42,6 +42,9 @@
                     <h2>Email: {{ userprofile.email }}</h2>
                     <h2>Last login: {{ userprofile.last_login }}</h2>
                 </div>
+                {% if user.is_staff %}
+                <a href="{% url 'admin' %}">Staff access</a>
+                {% endif %}
             </div>
             {% if shifts %}
             <div class="text-section uppercase" style="padding: 25px 10% 50px;">
