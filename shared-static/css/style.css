@@ -379,7 +379,7 @@ body, html {
     height: 75%; }
 
   #content .section {
-    padding: 0px 5%; }
+    padding: 0px; }
     #content .section .text-section {
       padding: 50px 5%; }
   #content .sidebar {
@@ -412,7 +412,7 @@ body, html {
     font-size: 24px; }
 
   #content .section {
-    padding: 0px 2.5%; }
+    padding: 0px; }
     #content .section .text-section {
       padding: 50px 2.5%; }
       #content .section .text-section h1, #content .section .text-section .post-title {
@@ -430,7 +430,7 @@ body, html {
       #content .section .text-section .form-field input {
         font-size: 18px; }
   #content .sidebar {
-    padding: 0px 2.5%; }
+    padding: 0px; }
     #content .sidebar .text-section {
       padding: 50px 2.5%; }
       #content .sidebar .text-section h1 {
