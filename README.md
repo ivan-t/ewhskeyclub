@@ -7,6 +7,9 @@ In the summer before my senior year of high school, I decided to learn Python an
 
 ## Showcase
 [<img src="https://i.imgur.com/5n95Otn.png">](https://i.imgur.com/5n95Otn.png)
+
 [<img src="https://i.imgur.com/EaKEtjo.png">](https://i.imgur.com/EaKEtjo.png)
+
 [<img src="https://i.imgur.com/pvxe4O9.png">](https://i.imgur.com/pvxe4O9.png)
+
 [All Images](https://imgur.com/a/9g8mznM)
